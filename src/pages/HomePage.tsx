@@ -24,13 +24,16 @@ export function HomePage() {
             you eat?
           </h1>
           <p className="mt-6 max-w-md text-[17px] leading-[1.5] text-muted">
-            Tell us what you’re craving. We’ll match it to evidence — menus, neighborhoods, atmosphere — not whoever has the most stars.
+            Tell us what you’re craving — or admit you have no idea. We’ll match it to evidence, not whoever has the most stars.
           </p>
           <div className="mt-10 max-w-xl">
             <SearchBox large />
           </div>
           <div className="mt-5 flex flex-wrap gap-x-4 gap-y-1.5 text-[13px] text-muted">
-            {prompts.slice(0, 7).map((p) => (
+            <Link to="/chat" className="text-ink hover:text-muted">
+              I can’t decide
+            </Link>
+            {prompts.slice(0, 6).map((p) => (
               <Link key={p.label} to={`/search?q=${encodeURIComponent(p.query)}`} className="hover:text-ink">
                 {p.label}
               </Link>

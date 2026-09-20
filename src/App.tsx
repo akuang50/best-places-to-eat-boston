@@ -6,11 +6,12 @@ import { MapPage } from "./pages/MapPage";
 import { PlanPage } from "./pages/PlanPage";
 import { DemoPage } from "./pages/DemoPage";
 import { ComparePage } from "./pages/ComparePage";
+import { ChatPage } from "./pages/ChatPage";
 import { Navigate, Route, Routes, useLocation, Link } from "react-router-dom";
 
 function Footer() {
   const { pathname } = useLocation();
-  if (pathname === "/map") return null;
+  if (pathname === "/map" || pathname === "/chat") return null;
 
   return (
     <footer className="border-t border-line">
@@ -24,6 +25,9 @@ function Footer() {
         <div className="text-[13px] leading-7">
           <Link to="/map" className="block hover:text-muted">
             Map
+          </Link>
+          <Link to="/chat" className="block hover:text-muted">
+            Decide
           </Link>
           <Link to="/plan" className="block hover:text-muted">
             Trails
@@ -49,6 +53,7 @@ export default function App() {
         <Route path="/search" element={<SearchPage />} />
         <Route path="/restaurant/:id" element={<RestaurantPage />} />
         <Route path="/map" element={<MapPage />} />
+        <Route path="/chat" element={<ChatPage />} />
         <Route path="/plan" element={<PlanPage />} />
         <Route path="/demo" element={<DemoPage />} />
         <Route path="/compare" element={<ComparePage />} />

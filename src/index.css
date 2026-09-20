@@ -171,5 +171,24 @@ a {
   html {
     scroll-behavior: auto;
   }
+
+  .chat-line {
+    animation: none;
+  }
+}
+
+@keyframes chat-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.chat-line {
+  animation: chat-in 0.35s ease;
 }
 

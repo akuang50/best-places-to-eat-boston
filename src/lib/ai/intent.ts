@@ -146,6 +146,66 @@ export function parseIntent(raw: string): Intent {
   };
 }
 
+export function emptyIntent(raw = ""): Intent {
+  return {
+    raw,
+    cuisine: [],
+    dishes: [],
+    neighborhoods: [],
+    near: null,
+    budget: null,
+    budgetMax: null,
+    occasion: null,
+    atmosphere: [],
+    dietary: [],
+    lateNight: false,
+    group: false,
+    family: false,
+    student: false,
+    walkable: false,
+    classic: false,
+    notTouristy: false,
+    notExperimental: false,
+    notTastingMenu: false,
+  };
+}
+
+function uniq(xs: string[]) {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const x of xs) {
+    const key = x.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(x);
+  }
+  return out;
+}
+
+export function mergeIntent(base: Intent, extra: Intent): Intent {
+  return {
+    raw: [base.raw, extra.raw].filter(Boolean).join(" · "),
+    cuisine: uniq([...base.cuisine, ...extra.cuisine]),
+    dishes: uniq([...base.dishes, ...extra.dishes]),
+    neighborhoods: uniq([...base.neighborhoods, ...extra.neighborhoods]),
+    near: extra.near ?? base.near,
+    budget: extra.budget ?? base.budget,
+    budgetMax: extra.budgetMax ?? base.budgetMax,
+    occasion: extra.occasion ?? base.occasion,
+    atmosphere: uniq([...base.atmosphere, ...extra.atmosphere]),
+    dietary: uniq([...base.dietary, ...extra.dietary]),
+    lateNight: base.lateNight || extra.lateNight,
+    group: base.group || extra.group,
+    family: base.family || extra.family,
+    student: base.student || extra.student,
+    walkable: base.walkable || extra.walkable,
+    classic: base.classic || extra.classic,
+    notTouristy: base.notTouristy || extra.notTouristy,
+    notExperimental: base.notExperimental || extra.notExperimental,
+    notTastingMenu: base.notTastingMenu || extra.notTastingMenu,
+  };
+}
+
 export const prompts = [
   { label: "Best pizza", query: "Best pizza in Boston that isn't just a tourist line" },
   { label: "Sushi tonight", query: "I want sushi tonight, not a $400 omakase unless that's truly the move" },

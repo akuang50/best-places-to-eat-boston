@@ -49,6 +49,10 @@ export function DemoPage() {
       </ol>
       <p className="mt-4 text-[14px] text-muted">
         Also the{" "}
+        <Link to="/chat" className="text-ink underline decoration-ink/25 underline-offset-4">
+          indecisive desk
+        </Link>
+        , the{" "}
         <Link to="/plan?trail=north-end-crawl" className="text-ink underline decoration-ink/25 underline-offset-4">
           North End crawl
         </Link>{" "}
