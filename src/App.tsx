@@ -11,7 +11,8 @@ import { Navigate, Route, Routes, useLocation, Link } from "react-router-dom";
 
 function Footer() {
   const { pathname } = useLocation();
-  if (pathname === "/map" || pathname === "/chat") return null;
+  const path = pathname.replace(/\/$/, "") || "/";
+  if (path === "/map" || path === "/chat") return null;
 
   return (
     <footer className="border-t border-line">
