@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", ui-serif, "Iowan Old Style", Georgia, serif;
+  --color-cream: #efe8dc;
+  --color-paper: #f6f1e8;
+  --color-ink: #1b1713;
+  --color-muted: #6d665c;
+  --color-tomato: #b42b1a;
+  --color-line: rgb(27 23 19 / 0.12);
+  --color-night: #141210;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+  font-feature-settings: "ss01", "kern";
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgb(180 43 26 / 0.16);
+}
+
+:focus-visible {
+  outline: 1px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+}
+
+.kicker {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.page {
+  width: min(1120px, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.rule {
+  border: 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.food-map .leaflet-tile-pane {
+  filter: saturate(0.78) contrast(0.96);
+}
+
+.food-map .leaflet-control-attribution {
+  background: rgb(246 241 232 / 0.88);
+  color: var(--color-muted);
+  font-size: 10px;
+  letter-spacing: 0.02em;
+}
+
+.food-map .leaflet-bar {
+  border: 0;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.food-map .leaflet-bar a {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  border: 0;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.food-map .leaflet-bar a:hover {
+  background: var(--color-cream);
+}
+
+.food-pin {
+  background: none;
+  border: 0;
+  filter: drop-shadow(0 1px 1px rgb(27 23 19 / 0.28));
+}
+
+.food-pin.is-dim {
+  opacity: 0.28;
+  filter: none;
+}
+
+.food-pin.is-on {
+  filter: drop-shadow(0 2px 4px rgb(27 23 19 / 0.35));
+}
+
+.leaflet-tooltip.leaflet-tooltip-top {
+  background: var(--color-night);
+  color: var(--color-cream);
+  border: 0;
+  border-radius: 0;
+  padding: 8px 10px;
+  box-shadow: none;
+  font-size: 13px;
+}
+
+.leaflet-tooltip.leaflet-tooltip-top::before {
+  border-top-color: var(--color-night);
+}
+
+.leaflet-tooltip .font-serif {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 14px;
+}
+
+.leaflet-tooltip .meta {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+.food-legend {
+  position: absolute;
+  z-index: 5;
+  right: 12px;
+  bottom: 28px;
+  margin: 0;
+  padding: 10px 12px 8px;
+  list-style: none;
+  background: rgb(246 241 232 / 0.92);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--color-ink);
+}
+
+.food-legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.food-legend .swatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 99px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
