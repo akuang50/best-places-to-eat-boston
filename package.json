@@ -3,10 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://akuang50.github.io/best-places-to-eat-boston/",
   "scripts": {
     "start": "vite --open",
     "dev": "vite --open",
     "build": "tsc -b && vite build",
+    "build:pages": "tsc -b && vite build --base /best-places-to-eat-boston/ && cp dist/index.html dist/404.html",
     "preview": "vite preview --open"
   },
   "dependencies": {
