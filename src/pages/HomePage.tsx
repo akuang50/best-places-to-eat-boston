@@ -29,10 +29,12 @@ export function HomePage() {
           <div className="mt-10 max-w-xl">
             <SearchBox large />
           </div>
-          <div className="mt-5 flex flex-wrap gap-x-4 gap-y-1.5 text-[13px] text-muted">
-            <Link to="/chat" className="text-ink hover:text-muted">
-              I can’t decide
+          <p className="mt-4 text-[15px]">
+            <Link to="/chat" className="text-ink underline decoration-ink/25 underline-offset-4 hover:decoration-ink/50">
+              I can’t decide — ask the desk
             </Link>
+          </p>
+          <div className="mt-5 flex flex-wrap gap-x-4 gap-y-1.5 text-[13px] text-muted">
             {prompts.slice(0, 6).map((p) => (
               <Link key={p.label} to={`/search?q=${encodeURIComponent(p.query)}`} className="hover:text-ink">
                 {p.label}
@@ -50,6 +52,22 @@ export function HomePage() {
             </p>
           </Link>
         ) : null}
+      </section>
+
+      <section className="border-t border-line">
+        <Link
+          to="/chat"
+          className="page grid gap-3 py-12 sm:grid-cols-[1fr_auto] sm:items-end sm:gap-8 lg:py-14"
+        >
+          <div>
+            <p className="kicker">The indecisive desk</p>
+            <h2 className="font-serif mt-2 text-[1.85rem] tracking-tight">You don’t have to know.</h2>
+            <p className="mt-3 max-w-md text-[15px] leading-relaxed text-muted">
+              If you can’t name a craving, we’ll ask until one kitchen wins. Same Boston graph as search — just more patient.
+            </p>
+          </div>
+          <span className="text-[13px] tracking-[0.04em] text-muted">Talk it out</span>
+        </Link>
       </section>
 
       <section className="border-t border-line">
