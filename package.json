@@ -8,7 +8,7 @@
     "start": "vite --open",
     "dev": "vite --open",
     "build": "tsc -b && vite build",
-    "build:pages": "tsc -b && vite build --base /best-places-to-eat-boston/ && cp dist/index.html dist/404.html",
+    "build:pages": "tsc -b && vite build --base /best-places-to-eat-boston/ && node scripts/copy-pages.mjs",
     "preview": "vite preview --open"
   },
   "dependencies": {

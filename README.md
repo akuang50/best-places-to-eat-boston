@@ -2,7 +2,8 @@
 
 Boston food guide. Type what you want; it ranks restaurants by intent.
 
-**Live site:** [https://akuang50.github.io/best-places-to-eat-boston/](https://akuang50.github.io/best-places-to-eat-boston/)
+**Live site:** [https://akuang50.github.io/best-places-to-eat-boston/](https://akuang50.github.io/best-places-to-eat-boston/)  
+**Decide:** [https://akuang50.github.io/best-places-to-eat-boston/chat](https://akuang50.github.io/best-places-to-eat-boston/chat)
 
 Pushes to `main` publish that URL via GitHub Pages. If GitHub is still serving a blank page, set **Settings → Pages → Source** to **GitHub Actions**, then re-run the *Deploy to GitHub Pages* workflow.
 
