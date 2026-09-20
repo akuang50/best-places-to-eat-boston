@@ -15,8 +15,8 @@ export function HomePage() {
 
   return (
     <div>
-      <section className="page grid items-start gap-x-16 gap-y-12 pt-12 pb-16 lg:grid-cols-12 lg:pt-16 lg:pb-20">
-        <div className="lg:col-span-7">
+      <section className="page grid items-start gap-x-14 gap-y-10 pt-10 pb-14 lg:grid-cols-12 lg:pt-14 lg:pb-16">
+        <div className="lg:col-span-7 lg:pt-2">
           <p className="kicker">Vol. 01 · Boston</p>
           <h1 className="font-serif mt-5 text-[clamp(3.2rem,8vw,6.4rem)] leading-[0.9] tracking-[-0.035em]">
             Where should
@@ -39,7 +39,7 @@ export function HomePage() {
         </div>
         {lead ? (
           <Link to={`/restaurant/${lead.id}`} className="hidden lg:col-span-5 lg:block">
-            <img src={lead.hero.url} alt="" className="aspect-[4/5] w-full object-cover" />
+            <img src={lead.hero.url} alt="" className="aspect-[4/3] w-full object-cover" />
             <p className="kicker mt-4">{lead.neighborhood}</p>
             <h2 className="font-serif mt-1 text-[1.85rem] tracking-tight">{lead.name}</h2>
             <p className="mt-1 text-[13px] text-muted">
